@@ -10,6 +10,121 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body.light-mode {
+            background-color: #f8fafc !important;
+            color: #0f172a !important;
+        }
+
+        body.light-mode .pointer-events-none,
+        body.light-mode .bg-grid-terminal,
+        body.light-mode .animate-drift,
+        body.light-mode .animate-drift-delayed,
+        body.light-mode .animate-pulse-glow,
+        body.light-mode .scanlines {
+            display: none !important;
+        }
+
+        body.light-mode,
+        body.light-mode.bg-\[var\(--color-obsidian-950\)\],
+        body.light-mode .bg-\[var\(--color-obsidian-950\)\],
+        body.light-mode .bg-slate-950,
+        body.light-mode .bg-slate-950\/70,
+        body.light-mode .bg-slate-950\/75,
+        body.light-mode .bg-slate-950\/80,
+        body.light-mode .bg-slate-950\/96,
+        body.light-mode .bg-slate-950\/100 {
+            background-color: #f8fafc !important;
+            background-image: none !important;
+        }
+
+        body.light-mode .bg-[linear-gradient(180deg,rgba(15,23,42,0.4),rgba(2,6,23,0.94))] {
+            background-image: linear-gradient(180deg, rgba(241, 245, 249, 0.95), rgba(248, 250, 252, 0.97)) !important;
+        }
+
+        body.light-mode .bg-white\/5,
+        body.light-mode .bg-white\/6,
+        body.light-mode .bg-white\/25,
+        body.light-mode .bg-white\/10 {
+            background-color: rgba(15, 23, 42, 0.08) !important;
+        }
+
+        body.light-mode .text-white,
+        body.light-mode .text-slate-100,
+        body.light-mode .text-slate-300,
+        body.light-mode .text-slate-400,
+        body.light-mode .text-slate-500 {
+            color: #0f172a !important;
+        }
+
+        body.light-mode .hover\:text-emerald-300:hover,
+        body.light-mode .hover\:text-cyan-200:hover {
+            color: #0f172a !important;
+        }
+
+        body.light-mode .border-white\/10,
+        body.light-mode .border-white\/12,
+        body.light-mode .border-white\/25,
+        body.light-mode .border-emerald-400\/10,
+        body.light-mode .border-emerald-400\/14,
+        body.light-mode .border-emerald-400\/16 {
+            border-color: rgba(15, 23, 42, 0.12) !important;
+        }
+
+        body.light-mode .bg-emerald-400\/10,
+        body.light-mode .bg-cyan-300\/6,
+        body.light-mode .bg-cyan-300\/10,
+        body.light-mode .bg-emerald-400\/12 {
+            background-color: rgba(16, 185, 129, 0.14) !important;
+        }
+
+        body.light-mode .terminal-card,
+        body.light-mode .terminal-card-accent,
+        body.light-mode .terminal-panel,
+        body.light-mode .terminal-tile,
+        body.light-mode .terminal-chip {
+            color: #0f172a !important;
+        }
+
+        body.light-mode .terminal-card {
+            background: rgba(255, 255, 255, 0.94) !important;
+            box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08) !important;
+            border-color: rgba(15, 23, 42, 0.12) !important;
+        }
+
+        body.light-mode .terminal-card-accent {
+            background: rgba(240, 253, 255, 0.94) !important;
+        }
+
+        body.light-mode .terminal-panel {
+            background: rgba(255, 255, 255, 0.98) !important;
+            border-color: rgba(16, 185, 129, 0.14) !important;
+        }
+
+        body.light-mode .terminal-tile,
+        body.light-mode .terminal-chip {
+            background: rgba(15, 23, 42, 0.06) !important;
+        }
+
+        body.light-mode header {
+            background-color: rgba(248, 250, 252, 0.98) !important;
+            border-color: rgba(15, 23, 42, 0.12) !important;
+        }
+
+        body.light-mode #theme-toggle,
+        body.light-mode #menu-toggle,
+        body.light-mode .inline-flex.bg-white\/5 {
+            background-color: rgba(15, 23, 42, 0.08) !important;
+            color: #0f172a !important;
+            border-color: rgba(15, 23, 42, 0.12) !important;
+            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08) !important;
+        }
+
+        body.light-mode #theme-toggle:hover,
+        body.light-mode #menu-toggle:hover {
+            background-color: rgba(15, 23, 42, 0.12) !important;
+        }
+    </style>
 </head>
 <body class="bg-[var(--color-obsidian-950)] font-sans text-slate-100 antialiased">
     <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
@@ -25,6 +140,7 @@
         <nav class="mx-auto flex w-[min(100%-1.5rem,1150px)] items-center justify-between py-4">
             <a href="#inicio" class="font-display text-xl font-bold tracking-tight text-white">Alexander<span class="text-emerald-400">.</span></a>
 
+            
             <button id="menu-toggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white shadow-lg shadow-black/30 md:hidden" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -36,6 +152,11 @@
                 <li><a href="#sobre-mi" class="block rounded-full px-4 py-2 transition hover:bg-emerald-400/8 hover:text-emerald-300">Sobre mí</a></li>
                 <li><a href="#proyectos" class="block rounded-full px-4 py-2 transition hover:bg-emerald-400/8 hover:text-emerald-300">Proyectos</a></li>
                 <li><a href="#contacto" class="block rounded-full px-4 py-2 transition hover:bg-emerald-400/8 hover:text-emerald-300">Contacto</a></li>
+                <li><a href="#tema" class="block rounded-full px-4 py-2 transition hover:bg-emerald-400/8 hover:text-emerald-300"><button id="theme-toggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white shadow-lg shadow-black/30 transition hover:bg-white/10" aria-label="Cambiar a modo claro">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button></a></li>
             </ul>
         </nav>
     </header>
@@ -178,10 +299,13 @@
                             <ul class="mt-4 flex flex-wrap gap-3">
                                 <li class="rounded-full bg-emerald-400 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-slate-950">PHP</li>
                                 <li class="terminal-chip">MySQL</li>
-                                <li class="terminal-chip">HTML</li>
-                                <li class="terminal-chip">CSS</li>
-                                <li class="terminal-chip">JavaScript</li>
+                                <li class="rounded-full bg-emerald-400 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-slate-950">HTML</li>
+                                <li class="rounded-full bg-emerald-400 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-slate-950">CSS</li>
+                                <li class="rounded-full bg-emerald-400 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-slate-950">JavaScript</li>
                                 <li class="terminal-chip">GitHub</li>
+                                <li class="rounded-full bg-emerald-400 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-slate-950">React</li>
+                                <li class="terminal-chip">Java</li>
+                                
                             </ul>
                         </article>
                     </div>
