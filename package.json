@@ -4,8 +4,8 @@
   "description": "Portafolio personal desarrollado con **HTML, CSS y JavaScript**, publicado mediante **GitHub Pages**.  \r En este sitio presento mis proyectos, habilidades y datos de contacto como desarrollador.",
   "main": "index.js",
   "scripts": {
-    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./css/style.css --minify",
-    "watch:css": "npx @tailwindcss/cli -i ./src/input.css -o ./css/style.css --watch"
+    "build:css": "npx @tailwindcss/cli -i ./src/css/input.css -o ./assets/css/style.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i ./src/css/input.css -o ./assets/css/style.css --watch"
   },
   "keywords": [],
   "author": "",

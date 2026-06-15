@@ -31,12 +31,16 @@ mi-portafolio/
 |-- index.html
 |-- README.md
 |-- package.json
-|-- css/
-|   `-- style.css
-|-- js/
-|   `-- main.js
+|-- assets/
+|   |-- css/
+|   |   `-- style.css
+|   |-- img/
+|   |   `-- projects/
+|   `-- js/
+|       `-- main.js
 `-- src/
-    `-- input.css
+    `-- css/
+        `-- input.css
 ```
 
 ## Instalación y uso local
