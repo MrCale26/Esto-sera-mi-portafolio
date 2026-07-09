@@ -10,20 +10,32 @@ revealElements.forEach(element => {
     element.classList.add("opacity-0", "translate-y-8", "transition-all", "duration-700");
 });
 
+const showRevealElement = element => {
+    element.classList.remove("opacity-0", "translate-y-8");
+    element.classList.add("opacity-100", "translate-y-0");
+};
+
 const revealObserver = new IntersectionObserver(
     entries => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
 
-            entry.target.classList.remove("opacity-0", "translate-y-8");
-            entry.target.classList.add("opacity-100", "translate-y-0");
+            showRevealElement(entry.target);
             revealObserver.unobserve(entry.target);
         });
     },
-    { threshold: 0.2 }
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.01 }
 );
 
 revealElements.forEach(element => revealObserver.observe(element));
+
+window.setTimeout(() => {
+    revealElements.forEach(element => {
+        if (element.classList.contains("opacity-0")) {
+            showRevealElement(element);
+        }
+    });
+}, 500);
 
 projectSliders.forEach(slider => {
     const image = slider.querySelector(".project-slider-image");
