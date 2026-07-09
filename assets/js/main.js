@@ -163,7 +163,7 @@ autoGalleries.forEach(async gallery => {
     gallery.innerHTML = `
         <div class="relative">
             <figure class="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80">
-                <img src="${images[0]}" alt="${title}" class="auto-gallery-image h-64 w-full object-cover object-top transition duration-700 sm:h-80">
+                <img src="${images[0]}" alt="${title}" class="auto-gallery-image h-[22rem] w-full object-contain object-center p-2 transition duration-700 sm:h-[28rem] lg:h-[34rem]">
             </figure>
             <div class="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3">
                 <button type="button" class="auto-gallery-prev pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-950/75 text-white shadow-lg shadow-black/30 backdrop-blur transition hover:border-emerald-400/30 hover:text-emerald-300" aria-label="Imagen anterior">
