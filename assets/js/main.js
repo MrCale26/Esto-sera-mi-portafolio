@@ -139,7 +139,10 @@ autoGalleries.forEach(async gallery => {
 
     if (!folder || !count) return;
 
-    const extensions = ["jpg", "jpeg", "png", "webp"];
+    const extensions = (gallery.dataset.galleryExtensions || "png,jpg,jpeg,webp")
+        .split(",")
+        .map(item => item.trim())
+        .filter(Boolean);
     const candidates = [];
 
     for (let index = 1; index <= count; index += 1) {
