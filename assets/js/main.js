@@ -4,6 +4,7 @@ const navLinks = document.getElementById("nav-links");
 const nav = document.querySelector("nav");
 const navItems = navLinks ? navLinks.querySelectorAll("a") : [];
 const projectSliders = document.querySelectorAll(".project-slider");
+const autoGalleries = document.querySelectorAll("[data-gallery-folder]");
 
 revealElements.forEach(element => {
     element.classList.add("opacity-0", "translate-y-8", "transition-all", "duration-700");
@@ -118,6 +119,103 @@ projectSliders.forEach(slider => {
     slider.addEventListener("touchstart", pauseAutoplayTemporarily, { passive: true });
 
     startAutoplay();
+});
+
+const imageExists = src => new Promise(resolve => {
+    const image = new Image();
+    image.onload = () => resolve(src);
+    image.onerror = () => resolve(null);
+    image.src = src;
+});
+
+autoGalleries.forEach(async gallery => {
+    const folder = gallery.dataset.galleryFolder;
+    const count = Number(gallery.dataset.galleryCount || 4);
+    const title = gallery.dataset.galleryTitle || "Imagen del proyecto";
+    const fallbackImages = (gallery.dataset.galleryFallback || "")
+        .split("|")
+        .map(item => item.trim())
+        .filter(Boolean);
+
+    if (!folder || !count) return;
+
+    const extensions = ["jpg", "jpeg", "png", "webp"];
+    const candidates = [];
+
+    for (let index = 1; index <= count; index += 1) {
+        extensions.forEach(extension => {
+            candidates.push(`${folder}/imagen-${index}.${extension}`);
+        });
+    }
+
+    const checkedImages = await Promise.all(candidates.map(imageExists));
+    let images = checkedImages.filter(Boolean);
+
+    if (!images.length && fallbackImages.length) {
+        const checkedFallbacks = await Promise.all(fallbackImages.map(imageExists));
+        images = checkedFallbacks.filter(Boolean);
+    }
+
+    if (!images.length) return;
+
+    let currentIndex = 0;
+
+    gallery.innerHTML = `
+        <div class="relative">
+            <figure class="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80">
+                <img src="${images[0]}" alt="${title}" class="auto-gallery-image h-64 w-full object-cover object-top transition duration-700 sm:h-80">
+            </figure>
+            <div class="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3">
+                <button type="button" class="auto-gallery-prev pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-950/75 text-white shadow-lg shadow-black/30 backdrop-blur transition hover:border-emerald-400/30 hover:text-emerald-300" aria-label="Imagen anterior">
+                    <span aria-hidden="true">&lt;</span>
+                </button>
+                <button type="button" class="auto-gallery-next pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-950/75 text-white shadow-lg shadow-black/30 backdrop-blur transition hover:border-emerald-400/30 hover:text-emerald-300" aria-label="Imagen siguiente">
+                    <span aria-hidden="true">&gt;</span>
+                </button>
+            </div>
+        </div>
+        <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+            <p class="auto-gallery-caption font-mono text-[11px] uppercase tracking-[0.22em] text-slate-500">${title}</p>
+            <div class="auto-gallery-dots flex items-center gap-2"></div>
+        </div>
+    `;
+
+    const image = gallery.querySelector(".auto-gallery-image");
+    const caption = gallery.querySelector(".auto-gallery-caption");
+    const dotsContainer = gallery.querySelector(".auto-gallery-dots");
+    const prevButton = gallery.querySelector(".auto-gallery-prev");
+    const nextButton = gallery.querySelector(".auto-gallery-next");
+
+    const setImage = index => {
+        currentIndex = (index + images.length) % images.length;
+        image.src = images[currentIndex];
+        image.alt = `${title} ${currentIndex + 1}`;
+        caption.textContent = `${title} ${currentIndex + 1}`;
+
+        dotsContainer.querySelectorAll("button").forEach((dot, dotIndex) => {
+            const isActive = dotIndex === currentIndex;
+            dot.classList.toggle("w-8", isActive);
+            dot.classList.toggle("bg-emerald-400", isActive);
+            dot.classList.toggle("w-2.5", !isActive);
+            dot.classList.toggle("bg-white/25", !isActive);
+            dot.setAttribute("aria-pressed", String(isActive));
+        });
+    };
+
+    images.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = index === 0
+            ? "h-2.5 w-8 rounded-full bg-emerald-400 transition"
+            : "h-2.5 w-2.5 rounded-full bg-white/25 transition";
+        dot.setAttribute("aria-label", `Mostrar imagen ${index + 1}`);
+        dot.setAttribute("aria-pressed", String(index === 0));
+        dot.addEventListener("click", () => setImage(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    prevButton.addEventListener("click", () => setImage(currentIndex - 1));
+    nextButton.addEventListener("click", () => setImage(currentIndex + 1));
 });
 
 const themeToggle = document.getElementById("theme-toggle");

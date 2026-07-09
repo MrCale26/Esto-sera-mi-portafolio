@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyectos destacados de Alexander Capitan en desarrollo Full Stack, aplicaciones moviles y ciberseguridad.">
+    <title>Proyectos | Alexander Capitan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[var(--color-obsidian-950)] font-sans text-slate-100 antialiased">
+    <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div class="bg-grid-terminal absolute inset-0 opacity-55"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.4),rgba(2,6,23,0.94))]"></div>
+        <div class="scanlines absolute inset-0 opacity-25"></div>
+    </div>
+
+    <header class="sticky top-0 z-50 border-b border-emerald-400/10 bg-slate-950/75 backdrop-blur-xl">
+        <nav class="mx-auto flex w-[min(100%-1.5rem,1180px)] items-center justify-between py-4">
+            <a href="index.html" class="font-display text-xl font-bold tracking-tight text-white">Alexander<span class="text-emerald-400">.</span></a>
+            <button id="menu-toggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white shadow-lg shadow-black/30 md:hidden" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <ul id="nav-links" class="absolute left-3 right-3 top-[76px] hidden flex-col gap-2 rounded-2xl border border-emerald-400/10 bg-slate-950/96 p-4 text-sm text-slate-300 shadow-2xl shadow-black/60 md:static md:flex md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+                <li><a href="index.html" class="block rounded-full px-4 py-2 transition hover:bg-emerald-400/8 hover:text-emerald-300">Inicio</a></li>
+                <li><a href="proyectos.html" class="block rounded-full px-4 py-2 text-emerald-300">Proyectos</a></li>
+                <li><a href="experiencia.html" class="block rounded-full px-4 py-2 transition hover:bg-emerald-400/8 hover:text-emerald-300">Experiencia</a></li>
+                <li><a href="tecnologias.html" class="block rounded-full px-4 py-2 transition hover:bg-emerald-400/8 hover:text-emerald-300">Tecnologias</a></li>
+                <li><a href="contacto.html" class="block rounded-full px-4 py-2 transition hover:bg-emerald-400/8 hover:text-emerald-300">Contacto</a></li>
+                <li><a href="assets/docs/Alexander-Capitan-CV.pdf" target="_blank" rel="noreferrer" class="block rounded-full bg-emerald-400 px-4 py-2 font-semibold text-slate-950 transition hover:bg-emerald-300">Ver CV</a></li>
+                <li><button id="theme-toggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white shadow-lg shadow-black/30 transition hover:bg-white/10" aria-label="Cambiar a modo claro"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="px-6 py-16 md:py-24">
+        <section class="reveal mx-auto max-w-6xl">
+            <p class="font-mono text-xs uppercase tracking-[0.24em] text-emerald-300">featured.projects</p>
+            <h1 class="mt-4 max-w-3xl font-display text-4xl font-bold leading-tight tracking-[-0.04em] text-white sm:text-6xl">Proyectos destacados.</h1>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-300">Sistemas academicos y profesionales orientados a ventas, inventario, usuarios, reportes, pedidos y seguridad.</p>
+
+            <div class="mt-10 grid gap-6">
+                <article class="terminal-panel rounded-[1.8rem] p-7">
+                    <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+                        <div class="project-visual rounded-2xl border border-white/10 bg-slate-950/80 p-5" data-gallery-folder="assets/img/projects/puntoventa-pos" data-gallery-count="5" data-gallery-title="PuntoVentaPOS imagen">
+                            <div class="rounded-2xl bg-white/5 p-4">
+                                <div class="mb-4 flex items-center justify-between">
+                                    <span class="font-mono text-xs text-emerald-300">PuntoVentaPOS</span>
+                                    <span class="rounded-full bg-emerald-400 px-3 py-1 text-xs font-bold text-slate-950">2026</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <div class="h-28 rounded-xl bg-emerald-400/10"></div>
+                                    <div class="h-28 rounded-xl bg-cyan-300/10"></div>
+                                    <div class="h-28 rounded-xl bg-white/10"></div>
+                                </div>
+                                <div class="mt-4 space-y-2">
+                                    <div class="h-3 rounded-full bg-white/10"></div>
+                                    <div class="h-3 w-2/3 rounded-full bg-white/10"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-mono text-xs uppercase tracking-[0.22em] text-emerald-300">2026</p>
+                            <h2 class="mt-2 text-3xl font-bold text-white">PuntoVentaPOS</h2>
+                            <p class="mt-4 leading-8 text-slate-300">Sistema web de punto de venta para gestionar ventas, clientes, inventario, compras, gastos y usuarios desde una plataforma centralizada.</p>
+                            <div class="mt-5 flex flex-wrap gap-3"><span class="terminal-chip">Python</span><span class="terminal-chip">Django</span><span class="terminal-chip">PostgreSQL</span><span class="terminal-chip">Docker</span><span class="terminal-chip">Templates</span></div>
+                            <a href="https://github.com/Calesito26/PuntoVentaPos.git" target="_blank" rel="noreferrer" class="mt-7 inline-flex rounded-full bg-emerald-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-emerald-300">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="terminal-panel rounded-[1.8rem] p-7">
+                    <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+                        <div class="project-visual rounded-2xl border border-white/10 bg-slate-950/80 p-5" data-gallery-folder="assets/img/projects/econosalud" data-gallery-count="5" data-gallery-title="EconoSalud imagen">
+                            <div class="grid gap-3 md:grid-cols-[0.72fr_1fr]">
+                                <div class="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4">
+                                    <div class="mx-auto h-40 max-w-[92px] rounded-[1.4rem] border border-white/20 bg-slate-950/75 p-2">
+                                        <div class="h-full rounded-xl bg-gradient-to-b from-emerald-400/30 to-cyan-300/20"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3 rounded-2xl bg-white/5 p-4">
+                                    <div class="h-4 w-24 rounded-full bg-emerald-400/40"></div>
+                                    <div class="h-3 rounded-full bg-white/10"></div>
+                                    <div class="h-3 rounded-full bg-white/10"></div>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <div class="h-16 rounded-xl bg-emerald-400/10"></div>
+                                        <div class="h-16 rounded-xl bg-cyan-300/10"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-mono text-xs uppercase tracking-[0.22em] text-cyan-300">2026</p>
+                            <h2 class="mt-2 text-3xl font-bold text-white">EconoSalud</h2>
+                            <p class="mt-4 leading-8 text-slate-300">Sistema distribuido para la gestion integral de una botica con acceso web y movil, incluyendo ventas, inventario, caja, compras, usuarios y reportes.</p>
+                            <div class="mt-5 flex flex-wrap gap-3"><span class="terminal-chip">Java</span><span class="terminal-chip">Maven</span><span class="terminal-chip">Tomcat</span><span class="terminal-chip">RMI</span><span class="terminal-chip">REST</span><span class="terminal-chip">Flutter</span><span class="terminal-chip">MySQL</span></div>
+                            <a href="https://github.com/Calesito26/EconoSalud.git" target="_blank" rel="noreferrer" class="mt-7 inline-flex rounded-full bg-emerald-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-emerald-300">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="terminal-panel rounded-[1.8rem] p-7">
+                    <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+                        <div class="project-visual rounded-2xl border border-white/10 bg-slate-950/80 p-5" data-gallery-folder="assets/img/projects/bibliotech" data-gallery-count="5" data-gallery-title="BiblioTech imagen">
+                            <div class="mx-auto max-w-[190px] rounded-[1.8rem] border border-emerald-400/20 bg-slate-950/80 p-3 shadow-2xl shadow-black/30">
+                                <div class="rounded-[1.2rem] bg-white/5 p-4">
+                                    <div class="mb-4 h-3 w-20 rounded-full bg-emerald-400/50"></div>
+                                    <div class="grid gap-3">
+                                        <div class="h-12 rounded-xl bg-cyan-300/10"></div>
+                                        <div class="h-12 rounded-xl bg-emerald-300/10"></div>
+                                        <div class="h-12 rounded-xl bg-white/10"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-mono text-xs uppercase tracking-[0.22em] text-emerald-300">2025</p>
+                            <h2 class="mt-2 text-3xl font-bold text-white">BiblioTech</h2>
+                            <p class="mt-4 leading-8 text-slate-300">Aplicacion movil Android para la administracion de bibliotecas, gestion de socios y personal con autenticacion segura.</p>
+                            <div class="mt-5 flex flex-wrap gap-3"><span class="terminal-chip">Android Studio</span><span class="terminal-chip">Java</span><span class="terminal-chip">JDBC</span><span class="terminal-chip">MariaDB</span><span class="terminal-chip">SHA-256</span></div>
+                            <a href="contacto.html" class="mt-7 inline-flex rounded-full bg-emerald-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-emerald-300">Solicitar enlace</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="terminal-panel rounded-[1.8rem] p-7">
+                    <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+                        <div class="project-visual rounded-2xl border border-white/10 bg-slate-950/80 p-5" data-gallery-folder="assets/img/projects/melenashop" data-gallery-count="5" data-gallery-title="MelenaShop imagen">
+                            <div class="rounded-2xl bg-white/5 p-4">
+                                <div class="mb-4 flex items-center justify-between">
+                                    <span class="font-display text-xl font-bold text-white">MelenaShop</span>
+                                    <span class="rounded-full bg-emerald-400 px-3 py-1 text-xs font-bold text-slate-950">WhatsApp</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <div class="h-32 rounded-xl bg-gradient-to-b from-cyan-300/30 to-white/10"></div>
+                                    <div class="h-32 rounded-xl bg-gradient-to-b from-emerald-300/30 to-white/10"></div>
+                                    <div class="h-32 rounded-xl bg-gradient-to-b from-slate-300/30 to-white/10"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-mono text-xs uppercase tracking-[0.22em] text-cyan-300">2025</p>
+                            <h2 class="mt-2 text-3xl font-bold text-white">MelenaShop</h2>
+                            <p class="mt-4 leading-8 text-slate-300">Landing page para una tienda de ropa urbana con catalogo de productos y pedidos mediante integracion con WhatsApp.</p>
+                            <div class="mt-5 flex flex-wrap gap-3"><span class="terminal-chip">React</span><span class="terminal-chip">Vite</span><span class="terminal-chip">JavaScript</span><span class="terminal-chip">JSX</span><span class="terminal-chip">CSS</span></div>
+                            <div class="mt-7 flex flex-wrap gap-3"><a href="https://github.com/MrCale26/melenaShop.git" target="_blank" rel="noreferrer" class="inline-flex rounded-full bg-emerald-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-emerald-300">GitHub</a><a href="https://melena-shop.vercel.app/" target="_blank" rel="noreferrer" class="inline-flex rounded-full border border-white/12 bg-white/5 px-5 py-3 font-semibold text-white transition hover:text-cyan-200">Demo</a></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="terminal-panel rounded-[1.8rem] p-7 lg:col-span-2">
+                    <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+                        <div class="project-visual rounded-2xl border border-white/10 bg-slate-950/80 p-5" data-gallery-folder="assets/img/projects/pasteleria" data-gallery-count="5" data-gallery-title="Pasteleria imagen" data-gallery-fallback="assets/img/projects/pasteleria/pasteleria-home.jpeg|assets/img/projects/pasteleria/pasteleria-inicio-admin.jpeg|assets/img/projects/pasteleria/pasteleria-gestionproductos-admin.jpeg|assets/img/projects/pasteleria/pasteleria-pedidosRegistrados-admin.jpeg">
+                            <div class="rounded-2xl bg-white/5 p-4">
+                                <div class="mb-4 flex items-center justify-between">
+                                    <span class="font-mono text-xs text-emerald-300">Pasteleria</span>
+                                    <span class="rounded-full bg-emerald-400 px-3 py-1 text-xs font-bold text-slate-950">Galeria</span>
+                                </div>
+                                <img src="assets/img/projects/pasteleria/pasteleria-home.jpeg" alt="Sistema de gestion para pasteleria" class="h-64 w-full rounded-xl object-cover object-top sm:h-80">
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-mono text-xs uppercase tracking-[0.22em] text-emerald-300">Proyecto destacado</p>
+                            <h2 class="mt-2 text-3xl font-bold text-white">Sistema de Gestion para Pasteleria</h2>
+                            <p class="mt-4 leading-8 text-slate-300">Sistema orientado a la digitalizacion de procesos comerciales y gestion de pedidos de una pasteleria.</p>
+                            <div class="mt-5 flex flex-wrap gap-3"><span class="terminal-chip">PHP</span><span class="terminal-chip">MySQL</span><span class="terminal-chip">MVC</span><span class="terminal-chip">JavaScript</span><span class="terminal-chip">HTML</span><span class="terminal-chip">CSS</span></div>
+                            <a href="https://github.com/MrCale26/Sistema-web-Pasteleria" target="_blank" rel="noreferrer" class="mt-7 inline-flex rounded-full bg-emerald-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-emerald-300">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="terminal-panel rounded-[1.8rem] p-7">
+                    <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+                        <div class="project-visual rounded-2xl border border-white/10 bg-slate-950/80 p-5" data-gallery-folder="assets/img/projects/ciberseguridad" data-gallery-count="5" data-gallery-title="Ciberseguridad imagen">
+                            <div class="rounded-2xl bg-black/40 p-4 font-mono text-xs leading-7 text-emerald-300">
+                                <p>kali@lab:~$ sqlmap -u target --risk=1</p>
+                                <p class="text-cyan-300">[INFO] testing SQL injection vectors</p>
+                                <p class="text-slate-300">DVWA | XSS | SQLi | hardening notes</p>
+                                <div class="mt-4 grid grid-cols-3 gap-3">
+                                    <div class="h-20 rounded-xl border border-emerald-400/20 bg-emerald-400/10"></div>
+                                    <div class="h-20 rounded-xl border border-cyan-300/20 bg-cyan-300/10"></div>
+                                    <div class="h-20 rounded-xl border border-rose-300/20 bg-rose-300/10"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-mono text-xs uppercase tracking-[0.22em] text-cyan-300">Academico</p>
+                            <h2 class="mt-2 text-3xl font-bold text-white">Laboratorios de Ciberseguridad</h2>
+                            <p class="mt-4 leading-8 text-slate-300">Laboratorios academicos sobre SQL Injection, XSS y buenas practicas de seguridad en aplicaciones web realizados en entornos controlados.</p>
+                            <div class="mt-5 flex flex-wrap gap-3"><span class="terminal-chip">Kali Linux</span><span class="terminal-chip">SQLMap</span><span class="terminal-chip">DVWA</span><span class="terminal-chip">Analisis web</span></div>
+                            <a href="https://github.com/Calesito26" target="_blank" rel="noreferrer" class="mt-7 inline-flex rounded-full bg-emerald-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-emerald-300">GitHub academico</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/10 px-6 py-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 Alexander Capitan. Todos los derechos reservados.</p>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

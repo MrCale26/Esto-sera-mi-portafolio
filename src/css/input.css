@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-@source "../index.html";
-@source "../js/**/*.js";
+@source "../../*.html";
+@source "../../assets/js/**/*.js";
 
 @theme {
     --font-sans: "Manrope", sans-serif;
@@ -29,6 +29,63 @@
 }
 
 @layer utilities {
+    .light-mode {
+        background-color: #f8fafc !important;
+        background-image: none !important;
+        color: #0f172a !important;
+    }
+
+    .light-mode .pointer-events-none,
+    .light-mode .bg-grid-terminal,
+    .light-mode .animate-drift,
+    .light-mode .animate-drift-delayed,
+    .light-mode .animate-pulse-glow,
+    .light-mode .scanlines {
+        display: none !important;
+    }
+
+    .light-mode header,
+    .light-mode .bg-slate-950\/75,
+    .light-mode .bg-slate-950\/96 {
+        background-color: rgba(248, 250, 252, 0.96) !important;
+    }
+
+    .light-mode .text-white,
+    .light-mode .text-slate-100,
+    .light-mode .text-slate-300,
+    .light-mode .text-slate-400,
+    .light-mode .text-slate-500 {
+        color: #0f172a !important;
+    }
+
+    .light-mode .terminal-card,
+    .light-mode .terminal-card-accent,
+    .light-mode .terminal-panel,
+    .light-mode .terminal-tile,
+    .light-mode .terminal-chip,
+    .light-mode .project-visual {
+        color: #0f172a !important;
+        border-color: rgba(15, 23, 42, 0.12) !important;
+    }
+
+    .light-mode .terminal-card,
+    .light-mode .project-visual {
+        background: rgba(255, 255, 255, 0.94) !important;
+        box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08) !important;
+    }
+
+    .light-mode .terminal-panel {
+        background: rgba(255, 255, 255, 0.98) !important;
+    }
+
+    .light-mode .terminal-tile,
+    .light-mode .terminal-chip,
+    .light-mode .bg-white\/5,
+    .light-mode .bg-white\/6,
+    .light-mode .bg-white\/10 {
+        background: rgba(15, 23, 42, 0.06) !important;
+    }
+
     .bg-grid-dark {
         background-image:
             linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
